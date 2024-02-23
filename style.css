@@ -1,0 +1,80 @@
+body {
+    font-family: 'Bangers', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #F0F4F3; /* Fondo amarillo claro */
+}
+
+header {
+    background-color: #052F39; /* Naranja */
+    padding: 20px;
+    text-align: center;
+    color: #fff; /* Texto blanco */
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+main {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#wheel {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    background: conic-gradient(
+        #ff5733 0% 10%,    /* Naranja */
+        #3498db 10% 20%,   /* Azul */
+        #e74c3c 20% 30%,   /* Rojo */
+        #27ae60 30% 40%,   /* Verde */
+        #f1c40f 40% 50%,   /* Amarillo */
+        #8e44ad 50% 60%,   /* Morado */
+        #2ecc71 60% 70%,   /* Verde claro */
+        #ff5733 70% 80%,   /* Naranja (repetido) */
+        #3498db 80% 90%,   /* Azul (repetido) */
+        #e74c3c 90% 100%   /* Rojo (repetido) */
+    );
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: rotate(0deg);
+    transition: transform 0s;
+}
+
+#pointer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: transform 0s;
+}
+
+button {
+    background-color: #ff5733; /* Naranja */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:disabled {
+    background-color: #bdc3c7; /* Gris */
+    cursor: not-allowed;
+}
+
+#result {
+    font-size: 18px;
+    color: #2c3e50; /* Texto gris oscuro */
+    margin-top: 20px;
+}

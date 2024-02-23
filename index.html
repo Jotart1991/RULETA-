@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ruleta de Ofertas</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px; /* Margen para separar la ruleta de la publicidad */
+        }
+
+        .ruleta-container {
+            position: relative;
+        }
+
+        footer {
+            background-color: #052F39; /* Color celeste */
+            text-align: center;
+            padding: 5px;
+        }
+
+        .redes-sociales img {
+            width: 30px; /* Ajusta el tamaño de los logos según sea necesario */
+            margin: 0 10px; /* Ajusta el espacio entre los logos según sea necesario */
+        }
+
+        /* Espacio para publicidad a la derecha */
+        .publicidad {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 200px; /* Ajusta el ancho según sea necesario */
+            height: 100%; /* O ajusta la altura según sea necesario */
+            background-color: #f0f0f0; /* Color de fondo de la publicidad */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999; /* Asegura que la publicidad esté sobre otros elementos */
+        }
+
+        .publicidad img {
+            max-width: 100%;
+            max-height: 100%;
+            transition: opacity 0.5s ease-in-out; /* Agregamos transición de opacidad */
+        }
+
+        button {
+            margin-top: 20px; /* Margen superior para separar el botón de la ruleta */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ruleta de Ofertas</h1>
+    </header>
+    
+    <!-- Espacio para publicidad -->
+    <div class="publicidad" id="publicidad">
+        <img src="imagen1.jpg" alt="Publicidad 1">
+        <img src="imagen2.jpg" alt="Publicidad 2" style="display: none;">
+        <img src="imagen3.jpg" alt="Publicidad 3" style="display: none;">
+        <img src="imagen4.jpg" alt="Publicidad 4" style="display: none;">
+    </div>
+
+    <main>
+        <div class="ruleta-container">
+            <div id="wheel"></div>
+            <div id="pointer"></div>
+            <button onclick="spinWheel()">Girar</button>
+        </div>
+        <div id="result"></div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div style="color: white;">
+            <p>Síguenos en nuestras redes:</p>
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/profile.php?id=61554348961962" target="_blank"><img src="icono_face-removebg-preview.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/tuusuario" target="_blank"><img src="instagram_logo-removebg-preview.png" alt="Instagram"></a>
+                <a href="https://wa.me/tunumerodetelefono" target="_blank"><img src="icon_whatsap-removebg-preview.png" alt="WhatsApp"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cambiar imágenes cada 3 segundos
+        const images = document.querySelectorAll('.publicidad img');
+        let currentIndex = 0;
+
+        setInterval(() => {
+            images[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.display = 'block';
+        }, 3000);
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
